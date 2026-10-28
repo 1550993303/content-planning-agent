@@ -1,0 +1,268 @@
+{
+  "request_id": "impossible",
+  "status": "incomplete",
+  "message": "无可行方案；预算缺口1.0，时间缺口0分钟。",
+  "missing_fields": [],
+  "model": {
+    "provider": "offline_mock",
+    "name": "rule_based_mock",
+    "usage_this_run": {}
+  },
+  "replayed": false,
+  "run_number": 1,
+  "saved": false,
+  "total_cost": null,
+  "cost_scope": "simulated_business_plan_not_api_billing",
+  "steps": [
+    {
+      "tool": "search_assets",
+      "status": "completed",
+      "cached": false
+    },
+    {
+      "tool": "estimate_plan",
+      "status": "completed",
+      "cached": false
+    },
+    {
+      "tool": "estimate_plan",
+      "status": "completed",
+      "cached": false
+    },
+    {
+      "tool": "finish",
+      "status": "completed",
+      "cached": false
+    }
+  ],
+  "partial_results": {
+    "quotes": [
+      {
+        "asset_ids": [
+          "A01"
+        ],
+        "script_tier": "premium",
+        "total_cost": 12,
+        "currency": "simulated_units",
+        "total_minutes": 120,
+        "estimated_finish": "2026-10-28T12:00:00+08:00",
+        "budget_gap": 5.0,
+        "deadline_gap_minutes": 0,
+        "breakdown": [
+          {
+            "step": "prepare_assets",
+            "cost": 4,
+            "minutes": 30
+          },
+          {
+            "step": "generate_script",
+            "cost": 8,
+            "minutes": 90
+          }
+        ],
+        "feasible": false,
+        "quote_id": "Q-a5e0810e8cc08710"
+      },
+      {
+        "asset_ids": [
+          "A02"
+        ],
+        "script_tier": "basic",
+        "total_cost": 8,
+        "currency": "simulated_units",
+        "total_minutes": 45,
+        "estimated_finish": "2026-10-28T10:45:00+08:00",
+        "budget_gap": 1.0,
+        "deadline_gap_minutes": 0,
+        "breakdown": [
+          {
+            "step": "prepare_assets",
+            "cost": 2,
+            "minutes": 15
+          },
+          {
+            "step": "generate_script",
+            "cost": 6,
+            "minutes": 30
+          }
+        ],
+        "feasible": false,
+        "quote_id": "Q-7457b46fa5852fb2"
+      }
+    ],
+    "scripts": []
+  },
+  "saved_plan": null,
+  "trace": [
+    {
+      "type": "model_action",
+      "run": 1,
+      "step": 1,
+      "tool": "search_assets",
+      "arguments": {
+        "query": "校园毕业季活动",
+        "reason": "先查找可用素材"
+      },
+      "reason": "先查找可用素材"
+    },
+    {
+      "type": "tool_result",
+      "run": 1,
+      "step": 1,
+      "tool": "search_assets",
+      "result": {
+        "ok": true,
+        "assets": [
+          {
+            "id": "A01",
+            "title": "毕业季精品校园镜头",
+            "quality": "premium",
+            "facts": [
+              "合成校园场景",
+              "适合毕业季活动"
+            ]
+          },
+          {
+            "id": "A02",
+            "title": "毕业季基础图文素材",
+            "quality": "basic",
+            "facts": [
+              "合成毕业季图片",
+              "可制作图文活动内容"
+            ]
+          }
+        ],
+        "script_tiers": [
+          "premium",
+          "basic"
+        ],
+        "message": "费用与耗时需调用 estimate_plan；无结果可以改写查询或请求补充"
+      }
+    },
+    {
+      "type": "model_action",
+      "run": 1,
+      "step": 2,
+      "tool": "estimate_plan",
+      "arguments": {
+        "asset_ids": [
+          "A01"
+        ],
+        "reason": "先评估优先品质方案",
+        "script_tier": "premium"
+      },
+      "reason": "先评估优先品质方案"
+    },
+    {
+      "type": "tool_result",
+      "run": 1,
+      "step": 2,
+      "tool": "estimate_plan",
+      "result": {
+        "ok": true,
+        "asset_ids": [
+          "A01"
+        ],
+        "script_tier": "premium",
+        "total_cost": 12,
+        "currency": "simulated_units",
+        "total_minutes": 120,
+        "estimated_finish": "2026-10-28T12:00:00+08:00",
+        "budget_gap": 5.0,
+        "deadline_gap_minutes": 0,
+        "breakdown": [
+          {
+            "step": "prepare_assets",
+            "cost": 4,
+            "minutes": 30
+          },
+          {
+            "step": "generate_script",
+            "cost": 8,
+            "minutes": 90
+          }
+        ],
+        "feasible": false,
+        "quote_id": "Q-a5e0810e8cc08710",
+        "available_script_tiers": [
+          "premium",
+          "basic"
+        ]
+      }
+    },
+    {
+      "type": "model_action",
+      "run": 1,
+      "step": 3,
+      "tool": "estimate_plan",
+      "arguments": {
+        "asset_ids": [
+          "A02"
+        ],
+        "reason": "观察到预算或时间超限，改评估基础方案",
+        "script_tier": "basic"
+      },
+      "reason": "观察到预算或时间超限，改评估基础方案"
+    },
+    {
+      "type": "tool_result",
+      "run": 1,
+      "step": 3,
+      "tool": "estimate_plan",
+      "result": {
+        "ok": true,
+        "asset_ids": [
+          "A02"
+        ],
+        "script_tier": "basic",
+        "total_cost": 8,
+        "currency": "simulated_units",
+        "total_minutes": 45,
+        "estimated_finish": "2026-10-28T10:45:00+08:00",
+        "budget_gap": 1.0,
+        "deadline_gap_minutes": 0,
+        "breakdown": [
+          {
+            "step": "prepare_assets",
+            "cost": 2,
+            "minutes": 15
+          },
+          {
+            "step": "generate_script",
+            "cost": 6,
+            "minutes": 30
+          }
+        ],
+        "feasible": false,
+        "quote_id": "Q-7457b46fa5852fb2",
+        "available_script_tiers": [
+          "premium",
+          "basic"
+        ]
+      }
+    },
+    {
+      "type": "model_action",
+      "run": 1,
+      "step": 4,
+      "tool": "finish",
+      "arguments": {
+        "message": "无可行方案；预算缺口1.0，时间缺口0分钟。",
+        "reason": "基础方案仍未满足约束",
+        "status": "incomplete"
+      },
+      "reason": "基础方案仍未满足约束"
+    },
+    {
+      "type": "tool_result",
+      "run": 1,
+      "step": 4,
+      "tool": "finish",
+      "result": {
+        "ok": true,
+        "status": "incomplete",
+        "message": "无可行方案；预算缺口1.0，时间缺口0分钟。"
+      }
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "request_id": "replan",
+  "status": "incomplete",
+  "message": "达到模型步数或工具调用次数上限，任务未完成；已成功产物已保留。",
+  "missing_fields": [],
+  "model": {
+    "provider": "offline_mock",
+    "name": "rule_based_mock",
+    "usage_this_run": {}
+  },
+  "replayed": false,
+  "run_number": 1,
+  "saved": false,
+  "total_cost": null,
+  "cost_scope": "simulated_business_plan_not_api_billing",
+  "steps": [
+    {
+      "tool": "search_assets",
+      "status": "completed",
+      "cached": false
+    }
+  ],
+  "partial_results": {
+    "quotes": [],
+    "scripts": []
+  },
+  "saved_plan": null,
+  "trace": [
+    {
+      "type": "model_action",
+      "run": 1,
+      "step": 1,
+      "tool": "search_assets",
+      "arguments": {
+        "query": "校园毕业季活动",
+        "reason": "先查找可用素材"
+      },
+      "reason": "先查找可用素材"
+    },
+    {
+      "type": "tool_result",
+      "run": 1,
+      "step": 1,
+      "tool": "search_assets",
+      "result": {
+        "ok": true,
+        "assets": [
+          {
+            "id": "A01",
+            "title": "毕业季精品校园镜头",
+            "quality": "premium",
+            "facts": [
+              "合成校园场景",
+              "适合毕业季活动"
+            ]
+          },
+          {
+            "id": "A02",
+            "title": "毕业季基础图文素材",
+            "quality": "basic",
+            "facts": [
+              "合成毕业季图片",
+              "可制作图文活动内容"
+            ]
+          }
+        ],
+        "script_tiers": [
+          "premium",
+          "basic"
+        ],
+        "message": "费用与耗时需调用 estimate_plan；无结果可以改写查询或请求补充"
+      }
+    },
+    {
+      "type": "limit_reached",
+      "run": 1,
+      "model_step_limit": 12,
+      "tool_call_limit": 1,
+      "tool_calls": 1
+    }
+  ]
+}

@@ -1,0 +1,404 @@
+{
+  "request_id": "tool-failure",
+  "status": "completed",
+  "message": "已保存校园毕业季活动方案（plan_id: P-tool-failure）。采用精品素材 A01 + 精品脚本 S-ee46185a40dead56，总费用 12 单位（预算 20 内），串行耗时 120 分钟，预计 2026-10-28T12:00 完成，早于截止 2026-10-29T18:00。方案为本地合成，未真实购买或发布。",
+  "missing_fields": [],
+  "model": {
+    "provider": "deepseek",
+    "name": "deepseek-flash",
+    "usage_this_run": {
+      "prompt_tokens": 2996,
+      "completion_tokens": 293,
+      "total_tokens": 3289
+    }
+  },
+  "replayed": false,
+  "run_number": 2,
+  "saved": true,
+  "total_cost": 12,
+  "cost_scope": "simulated_business_plan_not_api_billing",
+  "steps": [
+    {
+      "tool": "search_assets",
+      "status": "completed",
+      "cached": false
+    },
+    {
+      "tool": "estimate_plan",
+      "status": "completed",
+      "cached": false
+    },
+    {
+      "tool": "generate_script",
+      "status": "completed",
+      "cached": false
+    },
+    {
+      "tool": "save_plan",
+      "status": "failed",
+      "cached": false
+    },
+    {
+      "tool": "finish",
+      "status": "completed",
+      "cached": false
+    },
+    {
+      "tool": "save_plan",
+      "status": "completed",
+      "cached": false
+    },
+    {
+      "tool": "finish",
+      "status": "completed",
+      "cached": false
+    }
+  ],
+  "partial_results": {
+    "quotes": [
+      {
+        "asset_ids": [
+          "A01"
+        ],
+        "breakdown": [
+          {
+            "cost": 4,
+            "minutes": 30,
+            "step": "prepare_assets"
+          },
+          {
+            "cost": 8,
+            "minutes": 90,
+            "step": "generate_script"
+          }
+        ],
+        "budget_gap": 0.0,
+        "currency": "simulated_units",
+        "deadline_gap_minutes": 0,
+        "estimated_finish": "2026-10-28T12:00:00+08:00",
+        "feasible": true,
+        "quote_id": "Q-61c29f2ba7b9d6f9",
+        "script_tier": "premium",
+        "total_cost": 12,
+        "total_minutes": 120
+      }
+    ],
+    "scripts": [
+      {
+        "call_to_action": "查看活动详情，参与主题互动",
+        "generator": "local_synthetic_template",
+        "quote_id": "Q-61c29f2ba7b9d6f9",
+        "scenes": [
+          {
+            "narration": "合成校园场景；适合毕业季活动",
+            "source_id": "A01",
+            "visual": "毕业季精品校园镜头"
+          }
+        ],
+        "script_id": "S-ee46185a40dead56",
+        "tier": "premium",
+        "title": "校园毕业季活动活动脚本"
+      }
+    ]
+  },
+  "saved_plan": {
+    "plan_id": "P-tool-failure",
+    "request_id": "tool-failure",
+    "theme": "校园毕业季活动",
+    "budget": 20,
+    "deadline": "2026-10-29T18:00:00+08:00",
+    "quote": {
+      "asset_ids": [
+        "A01"
+      ],
+      "breakdown": [
+        {
+          "cost": 4,
+          "minutes": 30,
+          "step": "prepare_assets"
+        },
+        {
+          "cost": 8,
+          "minutes": 90,
+          "step": "generate_script"
+        }
+      ],
+      "budget_gap": 0.0,
+      "currency": "simulated_units",
+      "deadline_gap_minutes": 0,
+      "estimated_finish": "2026-10-28T12:00:00+08:00",
+      "feasible": true,
+      "quote_id": "Q-61c29f2ba7b9d6f9",
+      "script_tier": "premium",
+      "total_cost": 12,
+      "total_minutes": 120
+    },
+    "script": {
+      "call_to_action": "查看活动详情，参与主题互动",
+      "generator": "local_synthetic_template",
+      "quote_id": "Q-61c29f2ba7b9d6f9",
+      "scenes": [
+        {
+          "narration": "合成校园场景；适合毕业季活动",
+          "source_id": "A01",
+          "visual": "毕业季精品校园镜头"
+        }
+      ],
+      "script_id": "S-ee46185a40dead56",
+      "tier": "premium",
+      "title": "校园毕业季活动活动脚本"
+    },
+    "tasks": [
+      {
+        "name": "prepare_assets",
+        "depends_on": [],
+        "status": "completed",
+        "asset_ids": [
+          "A01"
+        ]
+      },
+      {
+        "name": "generate_script",
+        "depends_on": [
+          "prepare_assets"
+        ],
+        "status": "completed",
+        "script_id": "S-ee46185a40dead56"
+      },
+      {
+        "name": "save_plan",
+        "depends_on": [
+          "generate_script"
+        ],
+        "status": "completed"
+      }
+    ],
+    "execution_scope": "synthetic_planning_only"
+  },
+  "trace": [
+    {
+      "arguments": {
+        "query": "校园毕业季 活动 素材",
+        "reason": "按主题检索可用的毕业季活动素材。"
+      },
+      "reason": "按主题检索可用的毕业季活动素材。",
+      "run": 1,
+      "step": 1,
+      "tool": "search_assets",
+      "type": "model_action"
+    },
+    {
+      "result": {
+        "assets": [
+          {
+            "facts": [
+              "合成校园场景",
+              "适合毕业季活动"
+            ],
+            "id": "A01",
+            "quality": "premium",
+            "title": "毕业季精品校园镜头"
+          },
+          {
+            "facts": [
+              "合成毕业季图片",
+              "可制作图文活动内容"
+            ],
+            "id": "A02",
+            "quality": "basic",
+            "title": "毕业季基础图文素材"
+          }
+        ],
+        "message": "费用与耗时需调用 estimate_plan；无结果可以改写查询或请求补充",
+        "ok": true,
+        "script_tiers": [
+          "premium",
+          "basic"
+        ]
+      },
+      "run": 1,
+      "step": 1,
+      "tool": "search_assets",
+      "type": "tool_result"
+    },
+    {
+      "arguments": {
+        "asset_ids": [
+          "A01"
+        ],
+        "reason": "用户偏好精品素材与精品脚本，先评估该组合是否满足预算与截止时间。",
+        "script_tier": "premium"
+      },
+      "reason": "用户偏好精品素材与精品脚本，先评估该组合是否满足预算与截止时间。",
+      "run": 1,
+      "step": 2,
+      "tool": "estimate_plan",
+      "type": "model_action"
+    },
+    {
+      "result": {
+        "asset_ids": [
+          "A01"
+        ],
+        "available_script_tiers": [
+          "premium",
+          "basic"
+        ],
+        "breakdown": [
+          {
+            "cost": 4,
+            "minutes": 30,
+            "step": "prepare_assets"
+          },
+          {
+            "cost": 8,
+            "minutes": 90,
+            "step": "generate_script"
+          }
+        ],
+        "budget_gap": 0.0,
+        "currency": "simulated_units",
+        "deadline_gap_minutes": 0,
+        "estimated_finish": "2026-10-28T12:00:00+08:00",
+        "feasible": true,
+        "ok": true,
+        "quote_id": "Q-61c29f2ba7b9d6f9",
+        "script_tier": "premium",
+        "total_cost": 12,
+        "total_minutes": 120
+      },
+      "run": 1,
+      "step": 2,
+      "tool": "estimate_plan",
+      "type": "tool_result"
+    },
+    {
+      "arguments": {
+        "quote_id": "Q-61c29f2ba7b9d6f9",
+        "reason": "估算可行且符合精品偏好，按该报价生成脚本。"
+      },
+      "reason": "估算可行且符合精品偏好，按该报价生成脚本。",
+      "run": 1,
+      "step": 3,
+      "tool": "generate_script",
+      "type": "model_action"
+    },
+    {
+      "result": {
+        "call_to_action": "查看活动详情，参与主题互动",
+        "generator": "local_synthetic_template",
+        "ok": true,
+        "quote_id": "Q-61c29f2ba7b9d6f9",
+        "scenes": [
+          {
+            "narration": "合成校园场景；适合毕业季活动",
+            "source_id": "A01",
+            "visual": "毕业季精品校园镜头"
+          }
+        ],
+        "script_id": "S-ee46185a40dead56",
+        "tier": "premium",
+        "title": "校园毕业季活动活动脚本"
+      },
+      "run": 1,
+      "step": 3,
+      "tool": "generate_script",
+      "type": "tool_result"
+    },
+    {
+      "arguments": {
+        "quote_id": "Q-61c29f2ba7b9d6f9",
+        "reason": "脚本已生成且估算可行，保存合成活动方案。",
+        "script_id": "S-ee46185a40dead56"
+      },
+      "reason": "脚本已生成且估算可行，保存合成活动方案。",
+      "run": 1,
+      "step": 4,
+      "tool": "save_plan",
+      "type": "model_action"
+    },
+    {
+      "result": {
+        "error": "injected_tool_failure",
+        "message": "测试注入：save_plan 失败，未产生新产物",
+        "ok": false,
+        "retryable": false
+      },
+      "run": 1,
+      "step": 4,
+      "tool": "save_plan",
+      "type": "tool_result"
+    },
+    {
+      "arguments": {
+        "message": "方案已规划完成但未能保存：素材 A01（毕业季精品校园镜头）+ 精品脚本 S-ee46185a40dead56，估算 12 单位、120 分钟，满足 20 单位预算与 2026-10-29 18:00 截止（预计 2026-10-28 12:00 完成）。保存步骤 save_plan 返回不可重试的工具故障，未产生任何已保存产物，故无法声明完成。建议修复保存工具后重试保存（报价 Q-61c29f2ba7b9d6f9 与脚本可复用）。",
+        "reason": "保存工具永久故障导致方案未落盘，按规则明确停止。",
+        "status": "incomplete"
+      },
+      "reason": "保存工具永久故障导致方案未落盘，按规则明确停止。",
+      "run": 1,
+      "step": 5,
+      "tool": "finish",
+      "type": "model_action"
+    },
+    {
+      "result": {
+        "message": "方案已规划完成但未能保存：素材 A01（毕业季精品校园镜头）+ 精品脚本 S-ee46185a40dead56，估算 12 单位、120 分钟，满足 20 单位预算与 2026-10-29 18:00 截止（预计 2026-10-28 12:00 完成）。保存步骤 save_plan 返回不可重试的工具故障，未产生任何已保存产物，故无法声明完成。建议修复保存工具后重试保存（报价 Q-61c29f2ba7b9d6f9 与脚本可复用）。",
+        "ok": true,
+        "status": "incomplete"
+      },
+      "run": 1,
+      "step": 5,
+      "tool": "finish",
+      "type": "tool_result"
+    },
+    {
+      "type": "model_action",
+      "run": 2,
+      "step": 1,
+      "tool": "save_plan",
+      "arguments": {
+        "quote_id": "Q-61c29f2ba7b9d6f9",
+        "script_id": "S-ee46185a40dead56",
+        "reason": "已有通过估算的精品方案（12单位、120分钟，均在预算20与截止时间内），直接保存。"
+      },
+      "reason": "已有通过估算的精品方案（12单位、120分钟，均在预算20与截止时间内），直接保存。"
+    },
+    {
+      "type": "tool_result",
+      "run": 2,
+      "step": 1,
+      "tool": "save_plan",
+      "result": {
+        "ok": true,
+        "plan_id": "P-tool-failure",
+        "total_cost": 12,
+        "saved": true,
+        "location": "sqlite:plans/tool-failure"
+      }
+    },
+    {
+      "type": "model_action",
+      "run": 2,
+      "step": 2,
+      "tool": "finish",
+      "arguments": {
+        "status": "completed",
+        "message": "已保存校园毕业季活动方案（plan_id: P-tool-failure）。采用精品素材 A01 + 精品脚本 S-ee46185a40dead56，总费用 12 单位（预算 20 内），串行耗时 120 分钟，预计 2026-10-28T12:00 完成，早于截止 2026-10-29T18:00。方案为本地合成，未真实购买或发布。",
+        "reason": "方案已通过估算并成功保存，满足预算与截止时间约束。"
+      },
+      "reason": "方案已通过估算并成功保存，满足预算与截止时间约束。"
+    },
+    {
+      "type": "tool_result",
+      "run": 2,
+      "step": 2,
+      "tool": "finish",
+      "result": {
+        "ok": true,
+        "status": "completed",
+        "message": "已保存校园毕业季活动方案（plan_id: P-tool-failure）。采用精品素材 A01 + 精品脚本 S-ee46185a40dead56，总费用 12 单位（预算 20 内），串行耗时 120 分钟，预计 2026-10-28T12:00 完成，早于截止 2026-10-29T18:00。方案为本地合成，未真实购买或发布。"
+      }
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "request_id": "no-assets",
+  "status": "needs_input",
+  "message": "未找到相关素材，请补充素材或主题。",
+  "missing_fields": [],
+  "model": {
+    "provider": "offline_mock",
+    "name": "rule_based_mock",
+    "usage_this_run": {}
+  },
+  "replayed": false,
+  "run_number": 1,
+  "saved": false,
+  "total_cost": null,
+  "cost_scope": "simulated_business_plan_not_api_billing",
+  "steps": [
+    {
+      "tool": "search_assets",
+      "status": "completed",
+      "cached": false
+    },
+    {
+      "tool": "finish",
+      "status": "completed",
+      "cached": false
+    }
+  ],
+  "partial_results": {
+    "quotes": [],
+    "scripts": []
+  },
+  "saved_plan": null,
+  "trace": [
+    {
+      "type": "model_action",
+      "run": 1,
+      "step": 1,
+      "tool": "search_assets",
+      "arguments": {
+        "query": "火星基地开业活动",
+        "reason": "先查找可用素材"
+      },
+      "reason": "先查找可用素材"
+    },
+    {
+      "type": "tool_result",
+      "run": 1,
+      "step": 1,
+      "tool": "search_assets",
+      "result": {
+        "ok": true,
+        "assets": [],
+        "script_tiers": [
+          "premium",
+          "basic"
+        ],
+        "message": "费用与耗时需调用 estimate_plan；无结果可以改写查询或请求补充"
+      }
+    },
+    {
+      "type": "model_action",
+      "run": 1,
+      "step": 2,
+      "tool": "finish",
+      "arguments": {
+        "message": "未找到相关素材，请补充素材或主题。",
+        "reason": "检索返回空结果",
+        "status": "needs_input"
+      },
+      "reason": "检索返回空结果"
+    },
+    {
+      "type": "tool_result",
+      "run": 1,
+      "step": 2,
+      "tool": "finish",
+      "result": {
+        "ok": true,
+        "status": "needs_input",
+        "message": "未找到相关素材，请补充素材或主题。"
+      }
+    }
+  ]
+}

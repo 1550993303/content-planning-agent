@@ -1,0 +1,14 @@
+{
+  "version": "2026-10-28",
+  "assets": [
+    {"id": "A01", "title": "毕业季精品校园镜头", "tags": ["校园", "毕业", "毕业季", "青春", "campus", "graduation"], "quality": "premium", "facts": ["合成校园场景", "适合毕业季活动"], "fee": 4, "minutes": 30},
+    {"id": "A02", "title": "毕业季基础图文素材", "tags": ["校园", "毕业", "毕业季", "青春", "campus", "graduation"], "quality": "basic", "facts": ["合成毕业季图片", "可制作图文活动内容"], "fee": 2, "minutes": 15},
+    {"id": "A03", "title": "咖啡店基础素材", "tags": ["咖啡", "饮品", "coffee"], "quality": "basic", "facts": ["合成咖啡杯与门店图片"], "fee": 2, "minutes": 15}
+  ],
+  "script_tiers": {
+    "premium": {"fee": 8, "minutes": 90},
+    "basic": {"fee": 6, "minutes": 30}
+  },
+  "currency": "simulated_units",
+  "notes": "合成业务费用与串行耗时，不包含真实模型 API 账单；检索、估算和保存费用均为零。"
+}

@@ -1,0 +1,39 @@
+{
+  "request_id": "missing",
+  "status": "needs_input",
+  "message": "缺少必要信息，请补充：budget, deadline",
+  "missing_fields": [
+    "budget",
+    "deadline"
+  ],
+  "model": {
+    "provider": "deepseek",
+    "name": "deepseek-flash",
+    "usage_this_run": {
+      "prompt_tokens": 0,
+      "completion_tokens": 0,
+      "total_tokens": 0
+    }
+  },
+  "replayed": false,
+  "run_number": 1,
+  "saved": false,
+  "total_cost": null,
+  "cost_scope": "simulated_business_plan_not_api_billing",
+  "steps": [],
+  "partial_results": {
+    "quotes": [],
+    "scripts": []
+  },
+  "saved_plan": null,
+  "trace": [
+    {
+      "type": "validation",
+      "run": 1,
+      "missing_fields": [
+        "budget",
+        "deadline"
+      ]
+    }
+  ]
+}

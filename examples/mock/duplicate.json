@@ -1,0 +1,343 @@
+{
+  "request_id": "normal",
+  "status": "completed",
+  "message": "方案已通过约束并保存。",
+  "missing_fields": [],
+  "model": {
+    "provider": "offline_mock",
+    "name": "rule_based_mock",
+    "usage_this_run": {}
+  },
+  "replayed": true,
+  "run_number": 1,
+  "saved": true,
+  "total_cost": 12,
+  "cost_scope": "simulated_business_plan_not_api_billing",
+  "steps": [
+    {
+      "tool": "search_assets",
+      "status": "completed",
+      "cached": false
+    },
+    {
+      "tool": "estimate_plan",
+      "status": "completed",
+      "cached": false
+    },
+    {
+      "tool": "generate_script",
+      "status": "completed",
+      "cached": false
+    },
+    {
+      "tool": "save_plan",
+      "status": "completed",
+      "cached": false
+    },
+    {
+      "tool": "finish",
+      "status": "completed",
+      "cached": false
+    }
+  ],
+  "partial_results": {
+    "quotes": [
+      {
+        "asset_ids": [
+          "A01"
+        ],
+        "breakdown": [
+          {
+            "cost": 4,
+            "minutes": 30,
+            "step": "prepare_assets"
+          },
+          {
+            "cost": 8,
+            "minutes": 90,
+            "step": "generate_script"
+          }
+        ],
+        "budget_gap": 0.0,
+        "currency": "simulated_units",
+        "deadline_gap_minutes": 0,
+        "estimated_finish": "2026-10-28T12:00:00+08:00",
+        "feasible": true,
+        "quote_id": "Q-61c29f2ba7b9d6f9",
+        "script_tier": "premium",
+        "total_cost": 12,
+        "total_minutes": 120
+      }
+    ],
+    "scripts": [
+      {
+        "call_to_action": "查看活动详情，参与主题互动",
+        "generator": "local_synthetic_template",
+        "quote_id": "Q-61c29f2ba7b9d6f9",
+        "scenes": [
+          {
+            "narration": "合成校园场景；适合毕业季活动",
+            "source_id": "A01",
+            "visual": "毕业季精品校园镜头"
+          }
+        ],
+        "script_id": "S-ee46185a40dead56",
+        "tier": "premium",
+        "title": "校园毕业季活动活动脚本"
+      }
+    ]
+  },
+  "saved_plan": {
+    "budget": 20,
+    "deadline": "2026-10-29T18:00:00+08:00",
+    "execution_scope": "synthetic_planning_only",
+    "plan_id": "P-normal",
+    "quote": {
+      "asset_ids": [
+        "A01"
+      ],
+      "breakdown": [
+        {
+          "cost": 4,
+          "minutes": 30,
+          "step": "prepare_assets"
+        },
+        {
+          "cost": 8,
+          "minutes": 90,
+          "step": "generate_script"
+        }
+      ],
+      "budget_gap": 0.0,
+      "currency": "simulated_units",
+      "deadline_gap_minutes": 0,
+      "estimated_finish": "2026-10-28T12:00:00+08:00",
+      "feasible": true,
+      "quote_id": "Q-61c29f2ba7b9d6f9",
+      "script_tier": "premium",
+      "total_cost": 12,
+      "total_minutes": 120
+    },
+    "request_id": "normal",
+    "script": {
+      "call_to_action": "查看活动详情，参与主题互动",
+      "generator": "local_synthetic_template",
+      "quote_id": "Q-61c29f2ba7b9d6f9",
+      "scenes": [
+        {
+          "narration": "合成校园场景；适合毕业季活动",
+          "source_id": "A01",
+          "visual": "毕业季精品校园镜头"
+        }
+      ],
+      "script_id": "S-ee46185a40dead56",
+      "tier": "premium",
+      "title": "校园毕业季活动活动脚本"
+    },
+    "tasks": [
+      {
+        "asset_ids": [
+          "A01"
+        ],
+        "depends_on": [],
+        "name": "prepare_assets",
+        "status": "completed"
+      },
+      {
+        "depends_on": [
+          "prepare_assets"
+        ],
+        "name": "generate_script",
+        "script_id": "S-ee46185a40dead56",
+        "status": "completed"
+      },
+      {
+        "depends_on": [
+          "generate_script"
+        ],
+        "name": "save_plan",
+        "status": "completed"
+      }
+    ],
+    "theme": "校园毕业季活动"
+  },
+  "trace": [
+    {
+      "arguments": {
+        "query": "校园毕业季活动",
+        "reason": "先查找可用素材"
+      },
+      "reason": "先查找可用素材",
+      "run": 1,
+      "step": 1,
+      "tool": "search_assets",
+      "type": "model_action"
+    },
+    {
+      "result": {
+        "assets": [
+          {
+            "facts": [
+              "合成校园场景",
+              "适合毕业季活动"
+            ],
+            "id": "A01",
+            "quality": "premium",
+            "title": "毕业季精品校园镜头"
+          },
+          {
+            "facts": [
+              "合成毕业季图片",
+              "可制作图文活动内容"
+            ],
+            "id": "A02",
+            "quality": "basic",
+            "title": "毕业季基础图文素材"
+          }
+        ],
+        "message": "费用与耗时需调用 estimate_plan；无结果可以改写查询或请求补充",
+        "ok": true,
+        "script_tiers": [
+          "premium",
+          "basic"
+        ]
+      },
+      "run": 1,
+      "step": 1,
+      "tool": "search_assets",
+      "type": "tool_result"
+    },
+    {
+      "arguments": {
+        "asset_ids": [
+          "A01"
+        ],
+        "reason": "先评估优先品质方案",
+        "script_tier": "premium"
+      },
+      "reason": "先评估优先品质方案",
+      "run": 1,
+      "step": 2,
+      "tool": "estimate_plan",
+      "type": "model_action"
+    },
+    {
+      "result": {
+        "asset_ids": [
+          "A01"
+        ],
+        "available_script_tiers": [
+          "premium",
+          "basic"
+        ],
+        "breakdown": [
+          {
+            "cost": 4,
+            "minutes": 30,
+            "step": "prepare_assets"
+          },
+          {
+            "cost": 8,
+            "minutes": 90,
+            "step": "generate_script"
+          }
+        ],
+        "budget_gap": 0.0,
+        "currency": "simulated_units",
+        "deadline_gap_minutes": 0,
+        "estimated_finish": "2026-10-28T12:00:00+08:00",
+        "feasible": true,
+        "ok": true,
+        "quote_id": "Q-61c29f2ba7b9d6f9",
+        "script_tier": "premium",
+        "total_cost": 12,
+        "total_minutes": 120
+      },
+      "run": 1,
+      "step": 2,
+      "tool": "estimate_plan",
+      "type": "tool_result"
+    },
+    {
+      "arguments": {
+        "quote_id": "Q-61c29f2ba7b9d6f9",
+        "reason": "估算可行，生成脚本"
+      },
+      "reason": "估算可行，生成脚本",
+      "run": 1,
+      "step": 3,
+      "tool": "generate_script",
+      "type": "model_action"
+    },
+    {
+      "result": {
+        "call_to_action": "查看活动详情，参与主题互动",
+        "generator": "local_synthetic_template",
+        "ok": true,
+        "quote_id": "Q-61c29f2ba7b9d6f9",
+        "scenes": [
+          {
+            "narration": "合成校园场景；适合毕业季活动",
+            "source_id": "A01",
+            "visual": "毕业季精品校园镜头"
+          }
+        ],
+        "script_id": "S-ee46185a40dead56",
+        "tier": "premium",
+        "title": "校园毕业季活动活动脚本"
+      },
+      "run": 1,
+      "step": 3,
+      "tool": "generate_script",
+      "type": "tool_result"
+    },
+    {
+      "arguments": {
+        "quote_id": "Q-61c29f2ba7b9d6f9",
+        "reason": "依赖已完成，保存方案",
+        "script_id": "S-ee46185a40dead56"
+      },
+      "reason": "依赖已完成，保存方案",
+      "run": 1,
+      "step": 4,
+      "tool": "save_plan",
+      "type": "model_action"
+    },
+    {
+      "result": {
+        "location": "sqlite:plans/normal",
+        "ok": true,
+        "plan_id": "P-normal",
+        "saved": true,
+        "total_cost": 12
+      },
+      "run": 1,
+      "step": 4,
+      "tool": "save_plan",
+      "type": "tool_result"
+    },
+    {
+      "arguments": {
+        "message": "方案已通过约束并保存。",
+        "reason": "观察到保存成功",
+        "status": "completed"
+      },
+      "reason": "观察到保存成功",
+      "run": 1,
+      "step": 5,
+      "tool": "finish",
+      "type": "model_action"
+    },
+    {
+      "result": {
+        "message": "方案已通过约束并保存。",
+        "ok": true,
+        "status": "completed"
+      },
+      "run": 1,
+      "step": 5,
+      "tool": "finish",
+      "type": "tool_result"
+    }
+  ]
+}

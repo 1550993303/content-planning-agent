@@ -1,0 +1,192 @@
+{
+  "model_mode": "deepseek",
+  "recorded_at_utc": "2026-10-28T16:02:52.390464+00:00",
+  "clock": "2026-10-28T10:00:00+08:00",
+  "cases": [
+    {
+      "case": "normal",
+      "input": "examples/inputs/normal.json",
+      "output": "normal.json",
+      "faults": {},
+      "expected_status": "completed",
+      "actual_status": "completed",
+      "passed": true,
+      "total_cost": 12,
+      "saved": true,
+      "replayed": false,
+      "quote_costs": [
+        12
+      ],
+      "model_usage": {
+        "prompt_tokens": 7791,
+        "completion_tokens": 554,
+        "total_tokens": 8345
+      }
+    },
+    {
+      "case": "replan",
+      "input": "examples/inputs/replan.json",
+      "output": "replan.json",
+      "faults": {},
+      "expected_status": "completed",
+      "actual_status": "completed",
+      "passed": true,
+      "total_cost": 10,
+      "saved": true,
+      "replayed": false,
+      "quote_costs": [
+        12,
+        10
+      ],
+      "model_usage": {
+        "prompt_tokens": 10142,
+        "completion_tokens": 690,
+        "total_tokens": 10832
+      },
+      "observed_replanning": true
+    },
+    {
+      "case": "missing",
+      "input": "examples/inputs/missing.json",
+      "output": "missing.json",
+      "faults": {},
+      "expected_status": "needs_input",
+      "actual_status": "needs_input",
+      "passed": true,
+      "total_cost": null,
+      "saved": false,
+      "replayed": false,
+      "quote_costs": [],
+      "model_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      }
+    },
+    {
+      "case": "tool_failure",
+      "input": "examples/inputs/tool_failure.json",
+      "output": "tool_failure.json",
+      "faults": {
+        "save_plan": "always"
+      },
+      "expected_status": "incomplete",
+      "actual_status": "incomplete",
+      "passed": true,
+      "total_cost": null,
+      "saved": false,
+      "replayed": false,
+      "quote_costs": [
+        12
+      ],
+      "model_usage": {
+        "prompt_tokens": 7748,
+        "completion_tokens": 612,
+        "total_tokens": 8360
+      }
+    },
+    {
+      "case": "resume",
+      "input": "examples/inputs/tool_failure.json",
+      "output": "resume.json",
+      "faults": {},
+      "expected_status": "completed",
+      "actual_status": "completed",
+      "passed": true,
+      "total_cost": 12,
+      "saved": true,
+      "replayed": false,
+      "quote_costs": [
+        12
+      ],
+      "model_usage": {
+        "prompt_tokens": 2996,
+        "completion_tokens": 293,
+        "total_tokens": 3289
+      }
+    },
+    {
+      "case": "duplicate",
+      "input": "examples/inputs/normal.json",
+      "output": "duplicate.json",
+      "faults": {},
+      "expected_status": "completed",
+      "actual_status": "completed",
+      "passed": true,
+      "total_cost": 12,
+      "saved": true,
+      "replayed": true,
+      "quote_costs": [
+        12
+      ],
+      "model_usage": {
+        "prompt_tokens": 0,
+        "completion_tokens": 0,
+        "total_tokens": 0
+      }
+    },
+    {
+      "case": "impossible",
+      "input": "examples/inputs/impossible.json",
+      "output": "impossible.json",
+      "faults": {},
+      "expected_status": "incomplete",
+      "actual_status": "incomplete",
+      "passed": true,
+      "total_cost": null,
+      "saved": false,
+      "replayed": false,
+      "quote_costs": [
+        12,
+        10,
+        8
+      ],
+      "model_usage": {
+        "prompt_tokens": 7942,
+        "completion_tokens": 630,
+        "total_tokens": 8572
+      }
+    },
+    {
+      "case": "deadline",
+      "input": "examples/inputs/deadline.json",
+      "output": "deadline.json",
+      "faults": {},
+      "expected_status": "completed",
+      "actual_status": "completed",
+      "passed": true,
+      "total_cost": 10,
+      "saved": true,
+      "replayed": false,
+      "quote_costs": [
+        12,
+        10
+      ],
+      "model_usage": {
+        "prompt_tokens": 10158,
+        "completion_tokens": 683,
+        "total_tokens": 10841
+      }
+    },
+    {
+      "case": "no_assets",
+      "input": "examples/inputs/no_assets.json",
+      "output": "no_assets.json",
+      "faults": {},
+      "expected_status": "needs_input",
+      "actual_status": "needs_input",
+      "passed": true,
+      "total_cost": null,
+      "saved": false,
+      "replayed": false,
+      "quote_costs": [],
+      "model_usage": {
+        "prompt_tokens": 5219,
+        "completion_tokens": 405,
+        "total_tokens": 5624
+      }
+    }
+  ],
+  "saved_plan_count": 4,
+  "passed": true
+}

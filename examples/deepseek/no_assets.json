@@ -1,0 +1,150 @@
+{
+  "request_id": "no-assets",
+  "status": "needs_input",
+  "message": "三次检索（\"火星基地开业活动\"、\"火星 太空 基地 开业 庆典\"、\"太空 科幻 开业 活动 素材\"）均未返回任何可用素材，无法在 20 元预算与 2026-10-29 18:00 截止前完成方案估算与脚本生成。请补充可用的素材来源或素材 ID，或确认是否允许更换主题/素材范围。",
+  "missing_fields": [],
+  "model": {
+    "provider": "deepseek",
+    "name": "deepseek-flash",
+    "usage_this_run": {
+      "prompt_tokens": 5219,
+      "completion_tokens": 405,
+      "total_tokens": 5624
+    }
+  },
+  "replayed": false,
+  "run_number": 1,
+  "saved": false,
+  "total_cost": null,
+  "cost_scope": "simulated_business_plan_not_api_billing",
+  "steps": [
+    {
+      "tool": "search_assets",
+      "status": "completed",
+      "cached": false
+    },
+    {
+      "tool": "search_assets",
+      "status": "completed",
+      "cached": false
+    },
+    {
+      "tool": "search_assets",
+      "status": "completed",
+      "cached": false
+    },
+    {
+      "tool": "finish",
+      "status": "completed",
+      "cached": false
+    }
+  ],
+  "partial_results": {
+    "quotes": [],
+    "scripts": []
+  },
+  "saved_plan": null,
+  "trace": [
+    {
+      "type": "model_action",
+      "run": 1,
+      "step": 1,
+      "tool": "search_assets",
+      "arguments": {
+        "query": "火星基地开业活动",
+        "reason": "按用户主题检索可用合成素材"
+      },
+      "reason": "按用户主题检索可用合成素材"
+    },
+    {
+      "type": "tool_result",
+      "run": 1,
+      "step": 1,
+      "tool": "search_assets",
+      "result": {
+        "ok": true,
+        "assets": [],
+        "script_tiers": [
+          "premium",
+          "basic"
+        ],
+        "message": "费用与耗时需调用 estimate_plan；无结果可以改写查询或请求补充"
+      }
+    },
+    {
+      "type": "model_action",
+      "run": 1,
+      "step": 2,
+      "tool": "search_assets",
+      "arguments": {
+        "query": "火星 太空 基地 开业 庆典",
+        "reason": "首次查询无结果，改用更宽泛的关键词重试"
+      },
+      "reason": "首次查询无结果，改用更宽泛的关键词重试"
+    },
+    {
+      "type": "tool_result",
+      "run": 1,
+      "step": 2,
+      "tool": "search_assets",
+      "result": {
+        "ok": true,
+        "assets": [],
+        "script_tiers": [
+          "premium",
+          "basic"
+        ],
+        "message": "费用与耗时需调用 estimate_plan；无结果可以改写查询或请求补充"
+      }
+    },
+    {
+      "type": "model_action",
+      "run": 1,
+      "step": 3,
+      "tool": "search_assets",
+      "arguments": {
+        "query": "太空 科幻 开业 活动 素材",
+        "reason": "第二次仍无结果，再尝试更通用的科幻活动关键词"
+      },
+      "reason": "第二次仍无结果，再尝试更通用的科幻活动关键词"
+    },
+    {
+      "type": "tool_result",
+      "run": 1,
+      "step": 3,
+      "tool": "search_assets",
+      "result": {
+        "ok": true,
+        "assets": [],
+        "script_tiers": [
+          "premium",
+          "basic"
+        ],
+        "message": "费用与耗时需调用 estimate_plan；无结果可以改写查询或请求补充"
+      }
+    },
+    {
+      "type": "model_action",
+      "run": 1,
+      "step": 4,
+      "tool": "finish",
+      "arguments": {
+        "status": "needs_input",
+        "message": "三次检索（\"火星基地开业活动\"、\"火星 太空 基地 开业 庆典\"、\"太空 科幻 开业 活动 素材\"）均未返回任何可用素材，无法在 20 元预算与 2026-10-29 18:00 截止前完成方案估算与脚本生成。请补充可用的素材来源或素材 ID，或确认是否允许更换主题/素材范围。",
+        "reason": "检索无结果且无素材可估算，需用户补充素材来源"
+      },
+      "reason": "检索无结果且无素材可估算，需用户补充素材来源"
+    },
+    {
+      "type": "tool_result",
+      "run": 1,
+      "step": 4,
+      "tool": "finish",
+      "result": {
+        "ok": true,
+        "status": "needs_input",
+        "message": "三次检索（\"火星基地开业活动\"、\"火星 太空 基地 开业 庆典\"、\"太空 科幻 开业 活动 素材\"）均未返回任何可用素材，无法在 20 元预算与 2026-10-29 18:00 截止前完成方案估算与脚本生成。请补充可用的素材来源或素材 ID，或确认是否允许更换主题/素材范围。"
+      }
+    }
+  ]
+}
